@@ -1,0 +1,85 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time PNL</title>
+</head>
+<body>
+    <h1>Real-time PNL</h1>
+    <p id="pnl-value">Loading...</p>
+
+    <script>
+        const pnlValue = document.getElementById('pnl-value');
+        const eventSource = new EventSource("/stream_pnl");
+
+        eventSource.onmessage = function(event) {
+            pnlValue.innerText = `PNL: ${event.data}`;
+        };
+    </script>
+</body>
+</html> -->
+<!-- 
+
+
+<script>
+    const pnlValue = document.getElementById('pnl-value');
+    const eventSource = new EventSource("/stream_pnl");
+
+    eventSource.onmessage = function(event) {
+        pnlValue.innerText = `PNL: ${event.data}`;
+    };
+
+    const startButton = document.getElementById('start-button');
+    const stopButton = document.getElementById('stop-button');
+
+    startButton.addEventListener('click', () => {
+        fetch('/start_pnl', { method: 'POST' })
+            .then(response => response.text())
+            .then(message => console.log(message));
+    });
+
+    stopButton.addEventListener('click', () => {
+        fetch('/stop_pnl', { method: 'POST' })
+            .then(response => response.text())
+            .then(message => console.log(message));
+    });
+</script>
+ -->
+
+ <!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time PNL</title>
+</head>
+<body>
+    <h1>Real-time PNL</h1>
+    <p id="pnl-value">Loading...</p>
+    
+    <button id="start-button">Start Live PNL</button>
+    <button id="stop-button">Stop Live PNL</button>
+
+    <script>
+        const pnlValue = document.getElementById('pnl-value');
+        const eventSource = new EventSource("/stream_pnl");
+
+        eventSource.onmessage = function(event) {
+            pnlValue.innerText = `PNL: ${event.data}`;
+        };
+
+        const startButton = document.getElementById('start-button');
+        const stopButton = document.getElementById('stop-button');
+
+        startButton.addEventListener('click', () => {
+            fetch('/start_pnl', { method: 'POST' })
+                .then(response => response.text())
+                .then(message => console.log(message));
+        });
+
+        stopButton.addEventListener('click', () => {
+            fetch('/stop_pnl', { method: 'POST' })
+                .then(response => response.text())
+                .then(message => console.log(message));
+        });
+    </script>
+</body>
+</html>
+
