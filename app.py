@@ -1,27 +1,3 @@
-# from flask import Flask, render_template, Response
-# import time
-
-# app = Flask(__name__)
-
-# # Function to continuously generate a number (simulating PNL)
-# def generate_pnl():
-#     pnl = 0
-#     while True:
-#         pnl += 1  # Update the pnl value here as needed
-#         yield f"data: {pnl}\n\n"
-#         time.sleep(1)  # Adjust the sleep duration as needed
-
-# @app.route('/')
-# def index():
-#     return render_template('index.html')
-
-# @app.route('/stream_pnl')
-# def stream_pnl():
-#     return Response(generate_pnl(), content_type='text/event-stream')
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
 
 from flask import Flask, render_template, Response, request
 import time
