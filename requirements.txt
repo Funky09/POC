@@ -135,6 +135,7 @@ googleapis-common-protos @ file:///C:/ci/googleapis-common-protos-feedstock_1617
 graphviz==0.20.1
 greenlet==2.0.0.post0
 grpcio @ file:///C:/ci/grpcio_1637590978642/work
+gunicorn 
 h11==0.14.0
 h5py @ file:///C:/ci/h5py_1637120894255/work
 halo==0.0.31
