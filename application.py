@@ -62,13 +62,14 @@ def generate_pnl():
         yield f"data: {session['pnl']}\n\n"
         time.sleep(1)  # Adjust the sleep duration as needed
 
-
 @app.route('/')
 def index():
     return render_template('index.html')
 
 @app.route('/stream_pnl')
 def stream_pnl():
+    if 'pnl' not in session:
+        session['pnl'] = 0  # Initialize the PNL for the user
     return Response(generate_pnl(), content_type='text/event-stream')
 
 @app.route('/start_pnl', methods=['POST'])
